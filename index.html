@@ -1,169 +1,211 @@
-﻿<!DOCTYPE html>
-<html>
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>6-Day Hypertrophy Workout Split - Sri J</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f7fc;
-      color: #333;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+h1, h2, h3 {
+  font-family: 'Helvetica', sans-serif;
+  color: #003366;
+  font-weight: bold;
+}
 
-    .stackedit__left {
-      width: 25%;
-      background-color: #003366;
-      color: white;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      padding: 10px;
-      box-sizing: border-box;
-    }
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-    .stackedit__toc {
-      margin-top: 20px;
-    }
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
 
-    .stackedit__toc a {
-      color: #f0f0f0;
-      text-decoration: none;
-      display: block;
-      padding: 8px 0;
-      font-size: 14px;
-    }
+h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
 
-    .stackedit__toc a:hover {
-      background-color: #005f87;
-      border-radius: 4px;
-    }
+p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+}
 
-    .stackedit__right {
-      margin-left: 25%;
-      padding: 20px;
-      background-color: white;
-    }
+/* Sidebar Styles */
+.stackedit__left {
+  width: 25%;
+  background-color: #003366;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    .stackedit__html {
-      max-width: 100%;
-      overflow-x: auto;
-      padding: 10px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-    }
+.stackedit__toc {
+  margin-top: 20px;
+}
 
-    h1, h2, h3 {
-      color: #003366;
-      font-weight: bold;
-      font-family: 'Helvetica', sans-serif;
-    }
+.stackedit__toc a {
+  color: #f0f0f0;
+  text-decoration: none;
+  display: block;
+  padding: 8px 0;
+  font-size: 1rem;
+}
 
-    h1 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
+.stackedit__toc a:hover {
+  background-color: #005f87;
+  border-radius: 4px;
+}
 
-    h2 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
+.stackedit__toc li {
+  margin-bottom: 10px;
+}
 
-    h3 {
-      font-size: 18px;
-      margin-bottom: 6px;
-    }
+/* Main Content Area */
+.stackedit__right {
+  margin-left: 25%;
+  padding: 20px;
+  background-color: white;
+  overflow-x: hidden;
+}
 
-    p {
-      font-size: 14px;
-      line-height: 1.8;
-      color: #444;
-    }
+.stackedit__html {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
 
-    code {
-      background-color: #f4f4f4;
-      padding: 4px 8px;
-      border-radius: 4px;
-      font-family: 'Courier New', Courier, monospace;
-      color: #d6336c;
-    }
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+}
 
-    pre {
-      background-color: #f4f4f4;
-      padding: 12px;
-      border-radius: 4px;
-      font-size: 13px;
-      color: #d6336c;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-    }
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 
-    blockquote {
-      background-color: #f0f8ff;
-      border-left: 4px solid #003366;
-      padding: 10px 15px;
-      font-style: italic;
-      margin: 20px 0;
-    }
+th {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+}
 
-    /* Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
 
-    th, td {
-      padding: 10px;
-      text-align: left;
-      border-bottom: 1px solid #ddd; /* Adds a light gray line between rows */
-    }
+tr:hover {
+  background-color: #cce7ff;
+}
 
-    th {
-      background-color: #003366;
-      color: white;
-      font-weight: bold;
-    }
+td {
+  font-size: 1rem;
+  color: #333;
+}
 
-    tr:nth-child(even) {
-      background-color: #f9f9f9; /* Slight gray background for even rows */
-    }
+/* Code Block Styles */
+code {
+  background-color: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #d6336c;
+}
 
-    tr:hover {
-      background-color: #cce7ff; /* Light blue highlight when hovering over rows */
-    }
+pre {
+  background-color: #f4f4f4;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #d6336c;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  max-width: 100%;
+}
 
-    td {
-      font-size: 14px;
-      color: #333;
-    }
+/* Blockquote Styles */
+blockquote {
+  background-color: #f0f8ff;
+  border-left: 4px solid #003366;
+  padding: 10px 15px;
+  font-style: italic;
+  margin: 20px 0;
+}
 
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-      .stackedit__left {
-        width: 100%;
-        height: auto;
-        position: relative;
-      }
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .stackedit__left {
+    width: 20%;
+  }
 
-      .stackedit__right {
-        margin-left: 0;
-      }
-    }
-  </style>
-</head>
+  .stackedit__right {
+    margin-left: 20%;
+  }
 
-<body class="stackedit">
-  <div class="stackedit__left">
-    <div class="stackedit__toc">
-      
+  .stackedit__html {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stackedit__left {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .stackedit__right {
+    margin-left: 0;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  .stackedit__toc a {
+    font-size: 0.9rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stackedit__left {
+    padding: 15px;
+  }
+
+  .stackedit__right {
+    padding: 15px;
+  }
+}
+   
 <ul>
 <li><a href="#day-hypertrophy-workout-split---sri-j">6-Day Hypertrophy Workout Split - Sri J</a>
 <ul>
