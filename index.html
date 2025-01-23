@@ -39,10 +39,6 @@
       transition: width 0.3s ease;
     }
 
-    .stackedit__left:hover {
-      width: 30%;
-    }
-
     /* TOC */
     .stackedit__toc {
       margin-top: 20px;
@@ -64,22 +60,6 @@
     .stackedit__toc a:hover {
       background-color: #005f87;
       padding-left: 20px;
-    }
-
-    /* Toggle button for TOC on mobile */
-    .toc-toggle {
-      display: none;
-      background-color: #003366;
-      color: white;
-      font-size: 16px;
-      padding: 10px;
-      text-align: center;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    .toc-toggle.active {
-      background-color: #005f87;
     }
 
     /* Right Content Area */
@@ -209,12 +189,14 @@
 
     /* Mobile Styles */
     @media (max-width: 768px) {
+      /* Stack TOC and Content */
       .stackedit__left {
         width: 100%;
         position: relative;
         margin-bottom: 20px;
         height: auto;
         padding: 15px;
+        box-sizing: border-box;
       }
 
       .stackedit__right {
@@ -245,23 +227,35 @@
         white-space: nowrap;
       }
 
-      /* Show TOC toggle button on mobile */
-      .toc-toggle {
-        display: block;
+      .stackedit__html {
+        padding: 15px;
       }
 
-      /* Hide TOC by default on mobile */
+      /* Make sure TOC and content stack properly */
+      .stackedit__left, .stackedit__right {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      /* Keep the TOC visible */
       .stackedit__left {
-        display: none;
-      }
-
-      .stackedit__left.active {
-        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        max-width: 300px;
+        z-index: 1;
+        background-color: #003366;
+        color: white;
+        padding: 15px;
+        overflow-y: auto;
+        max-height: 100vh;
       }
 
       .stackedit__right {
         margin-left: 0;
-        padding-top: 60px;
+        padding-top: 20px;
       }
     }
   </style>
@@ -269,14 +263,12 @@
 
 <body class="stackedit">
   <div class="stackedit__left">
-    <div class="toc-toggle" id="toc-toggle">Toggle TOC</div>
     <div class="stackedit__toc">
       <!-- TOC Content Goes Here -->
     </div>
   </div>
   <div class="stackedit__right">
     <div class="stackedit__html">
-   
 <ul>
 <li><a href="#day-hypertrophy-workout-split---sri-j">6-Day Hypertrophy Workout Split - Sri J</a>
 <ul>
@@ -767,13 +759,6 @@
 </table>
     </div>
   </div>
-  <script>
-    document.getElementById('toc-toggle').addEventListener('click', function () {
-      const toc = document.querySelector('.stackedit__left');
-      toc.classList.toggle('active');
-      this.classList.toggle('active');
-    });
-  </script>
 </body>
 
 </html>
