@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -7,7 +7,7 @@
   <title>6-Day Hypertrophy Workout Split - Sri J</title>
   <link rel="stylesheet" href="https://stackedit.io/style.css" />
   <style>
-    /* Reset some default styles */
+    /* Reset default styles */
     * {
       margin: 0;
       padding: 0;
@@ -36,16 +36,19 @@
       padding: 20px;
       box-sizing: border-box;
       overflow-y: auto;
-      transition: all 0.3s ease;
+      transition: width 0.3s ease;
     }
 
     .stackedit__left:hover {
       width: 30%;
     }
 
-    /* Table of Contents Styles */
+    /* TOC */
     .stackedit__toc {
       margin-top: 20px;
+      font-size: 16px;
+      overflow-y: auto;
+      max-height: calc(100vh - 60px);
     }
 
     .stackedit__toc a {
@@ -61,6 +64,22 @@
     .stackedit__toc a:hover {
       background-color: #005f87;
       padding-left: 20px;
+    }
+
+    /* Toggle button for TOC on mobile */
+    .toc-toggle {
+      display: none;
+      background-color: #003366;
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .toc-toggle.active {
+      background-color: #005f87;
     }
 
     /* Right Content Area */
@@ -194,10 +213,13 @@
         width: 100%;
         position: relative;
         margin-bottom: 20px;
+        height: auto;
+        padding: 15px;
       }
 
       .stackedit__right {
         margin-left: 0;
+        padding: 15px;
       }
 
       h1 {
@@ -222,28 +244,32 @@
         overflow-x: auto;
         white-space: nowrap;
       }
-    }
 
-    /* Extra styles for smooth transitions */
-    .transition {
-      transition: all 0.3s ease;
-    }
+      /* Show TOC toggle button on mobile */
+      .toc-toggle {
+        display: block;
+      }
 
-    /* Add spacing and clean separation between content */
-    .content-section {
-      margin-bottom: 40px;
-    }
+      /* Hide TOC by default on mobile */
+      .stackedit__left {
+        display: none;
+      }
 
-    /* Adding visible borders for exercise rows */
-    .exercise-card {
-      border: 1px solid #ddd;
-    }
+      .stackedit__left.active {
+        display: block;
+      }
 
+      .stackedit__right {
+        margin-left: 0;
+        padding-top: 60px;
+      }
+    }
   </style>
 </head>
 
 <body class="stackedit">
   <div class="stackedit__left">
+    <div class="toc-toggle" id="toc-toggle">Toggle TOC</div>
     <div class="stackedit__toc">
       <!-- TOC Content Goes Here -->
     </div>
@@ -741,6 +767,13 @@
 </table>
     </div>
   </div>
+  <script>
+    document.getElementById('toc-toggle').addEventListener('click', function () {
+      const toc = document.querySelector('.stackedit__left');
+      toc.classList.toggle('active');
+      this.classList.toggle('active');
+    });
+  </script>
 </body>
 
 </html>
